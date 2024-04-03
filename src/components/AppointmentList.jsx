@@ -53,7 +53,11 @@ const AppointmentList = ({ appointment, setAppointment }) => {
           </Row>
         ))
       ) : (
-        <img src="./img/appointment.jpg" alt="no Appointments" className="w-50" />
+        <img
+          src="./img/appointment.jpg"
+          alt="no Appointments"
+          className="w-50"
+        />
       )}
     </Container>
   );

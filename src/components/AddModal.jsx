@@ -1,23 +1,27 @@
+import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
-import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
+
 function AddModal({ show, handleClose, drName, addAppointment }) {
   const [patientName, setPatientName] = useState("");
   const [date, setDate] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
     addAppointment({
-      id: crypto.randomUUID(),
+      id: uuidv4(),
       patient: patientName,
-      day: date,
+      date: new Date(date).toISOString(),
       consulted: false,
       doctor: drName,
-    })
-setPatientName("")
-setDate("")
-handleClose()
-  }
+    });
+    setPatientName("");
+    setDate("");
+    handleClose();
+  };
+
   return (
     <>
       <Modal show={show} onHide={handleClose} size="lg">
@@ -32,6 +36,7 @@ handleClose()
                 type="text"
                 placeholder="Enter Patient Name"
                 onChange={(e) => setPatientName(e.target.value)}
+                required
                 value={patientName}
               />
             </Form.Group>
@@ -40,9 +45,10 @@ handleClose()
               <Form.Label>Date</Form.Label>
               <Form.Control
                 type="datetime-local"
-                placeholder="Password"
+                placeholder="Enter Date and Time"
                 onChange={(e) => setDate(e.target.value)}
                 value={date}
+                required
               />
             </Form.Group>
 
