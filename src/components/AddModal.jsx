@@ -13,8 +13,11 @@ function AddModal({ show, handleClose, drName, addAppointment }) {
       day: date,
       consulted: false,
       doctor: drName,
-    });
-  };
+    })
+setPatientName("")
+setDate("")
+handleClose()
+  }
   return (
     <>
       <Modal show={show} onHide={handleClose} size="lg">
