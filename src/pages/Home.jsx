@@ -4,7 +4,7 @@ import Doctors from "../components/Doctors";
 import { appointmentData } from "../helpers/data";
 
 const Home = () => {
-  const [appointment, setAppointment] = useState(appointmentData);
+  const [appointment, setAppointment] = useState(JSON.parse(localStorage.getItem("appointments")) || [] ) 
   
   return (
     <main className="text-center mt-2">

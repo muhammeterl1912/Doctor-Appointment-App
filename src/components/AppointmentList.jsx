@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { MdDelete } from "react-icons/md";
 import { TiTickOutline } from "react-icons/ti";
-import AddModal from "./AddModal";
 
 const AppointmentList = ({ appointment, setAppointment }) => {
   const handleDelete = (id) => {
-    setAppointment(appointment.filter((item) => id !== item.id));
+    const delApp = appointment?.filter((item) => id !== item.id);
+    setAppointment(delApp);
+    localStorage.setItem("appointments", JSON.stringify(delApp));
   };
 
   const handleEdit = (id) => {
