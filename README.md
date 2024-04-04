@@ -4,7 +4,7 @@ This project, **Doctor-Appointment-App**, is a React-based web application desig
 
 ## Demo
 
-You can view a live demo of the Doctor-Appointment-App at [https://endearing-zabaione-3b7fed.netlify.app/](https://endearing-zabaione-3b7fed.netlify.app/).
+You can view a live demo of the React-Doctor-Appointment-App by clicking [here](https://endearing-zabaione-3b7fed.netlify.app/) 🌐.
 
 ## Features
 
